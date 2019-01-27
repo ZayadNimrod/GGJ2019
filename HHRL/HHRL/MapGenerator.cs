@@ -290,10 +290,10 @@ namespace HHRL {
 
                 int area = i.width * i.height;
 
-                int braziers = (int)(avBraziers * area / 50);
-                int lamps = (int)(avLamps * area / 50);
-                int torches = (int)(avTorches * area / 50);
-                int candles = (int)(avCandles * area / 50);
+                int braziers = (int)(avBraziers * area / 45);
+                int lamps = (int)(avLamps * area / 45);
+                int torches = (int)(avTorches * area / 45);
+                int candles = (int)(avCandles * area / 45);
 
                 for (int j = 0; j < braziers; j++) {
                     bool ok = false;
