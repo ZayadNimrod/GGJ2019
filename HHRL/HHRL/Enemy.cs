@@ -169,7 +169,7 @@ namespace HHRL {
 
         public void ResolveTurn(IRandom rng, Player player, HouseFloor floor) {
             if (turnTimer == 0) {
-                if (rng.Next(0, 4) == 0) {
+                if (rng.Next(0, 2) == 0) {
                     floor.ComputeFov(x, y, 100, false);
 
                     //find new target
