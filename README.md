@@ -5,6 +5,9 @@ The House, my entry for the Global Game Jam 2018.
 https://globalgamejam.org/2019/games/house-0
 
 
+Code is released under the Creative Commons Attribution-Noncommercial-Share Alike 3.0.
+
+
 Uses RLNet and Roguesharp licensed under MIT License
 
  
