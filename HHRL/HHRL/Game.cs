@@ -184,10 +184,10 @@ namespace HHRL {
                     foreach (LightSource k in floors[currentFloor].lamps) {
                         if (k is LampGeneric l) {
                             if (l.X() == player.X()) {
-                                if (Math.Abs(l.Y() - player.Y()) == 1) {
+                                if (Math.Abs(l.Y() - player.Y()) <= 1) {
                                     l.Light();
                                 }
-                            } else if (Math.Abs(l.X() - player.X()) == 1) {
+                            } else if (Math.Abs(l.X() - player.X()) <= 1) {
                                 if (l.Y() == player.Y()) {
                                     l.Light();
                                 }
