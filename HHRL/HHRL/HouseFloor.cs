@@ -14,7 +14,8 @@ namespace HHRL {
         WOODFLOOR,
         WOODWALL,
         CARPETFLOOR,
-        TABLE
+        TABLE,
+        CHAIR
 
     }
 
@@ -102,6 +103,10 @@ namespace HHRL {
                     break;
                 case TileTypes.TABLE:
                     symbol = (char)194;
+                    color = Colors.yellow;
+                    break;
+                case TileTypes.CHAIR:
+                    symbol = (char)191;
                     color = Colors.yellow;
                     break;
             }

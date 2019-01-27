@@ -77,8 +77,8 @@ namespace HHRL {
                 x = 0;
                 y = 0;
                 while (floors[currentFloor].GetCell(x, y).IsWalkable == false) {
-                    x = rng.Next(0, floors[currentFloor].Width);
-                    y = rng.Next(0, floors[currentFloor].Height);
+                    x = rng.Next(0, floors[currentFloor].Width-1);
+                    y = rng.Next(0, floors[currentFloor].Height-1);
                 }
                 Poltergiest p = new Poltergiest(x, y);
 

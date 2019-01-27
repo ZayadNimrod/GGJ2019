@@ -270,19 +270,19 @@ namespace HHRL {
                         avLamps = (rng.Next(0, 2)) / 2f;
                         break;
                     case Room.RoomType.CELLAR:
-                        avCandles = rng.Next(2, 4) / 3f;
-                        avTorches = rng.Next(0, 2);
+                        avCandles = rng.Next(1, 4) / 3f;
+                        avTorches = rng.Next(0, 2) / 2f;
                         break;
                     case Room.RoomType.HABIT:
                         avLamps = rng.Next(0, 2) / 3f;
                         avCandles = rng.Next(1, 3) / 3f;
                         break;
                     case Room.RoomType.HABITFANCY:
-                        avLamps = rng.Next(0, 3) / 3f;
-                        avBraziers = rng.Next(0, 1) / 2.5f;
+                        avLamps = rng.Next(0, 2) / 3f;
+                        avBraziers = rng.Next(0, 1) / 3f;
                         break;
                     case Room.RoomType.GRAND:
-                        avCandles = rng.Next(1, 4) / 3f;
+                        avCandles = rng.Next(1, 3) / 3f;
                         avBraziers = rng.Next(0, 2) / 3f;
                         break;
 
@@ -290,10 +290,10 @@ namespace HHRL {
 
                 int area = i.width * i.height;
 
-                int braziers = (int)(avBraziers * area / 40);
-                int lamps = (int)(avLamps * area / 40);
-                int torches = (int)(avTorches * area / 40);
-                int candles = (int)(avCandles * area / 40);
+                int braziers = (int)(avBraziers * area / 50);
+                int lamps = (int)(avLamps * area / 50);
+                int torches = (int)(avTorches * area / 50);
+                int candles = (int)(avCandles * area / 50);
 
                 for (int j = 0; j < braziers; j++) {
                     bool ok = false;
@@ -402,7 +402,7 @@ namespace HHRL {
                 }
 
                 //add tables
-                int tables = area / 60;
+                int tables = area / 120;
                 for (int j = 0; j < tables; j++) {
                     bool ok = false;
                     int newX = 0;
@@ -412,14 +412,34 @@ namespace HHRL {
                         newX = rng.Next(i.x + 1, i.x + i.width - 2);
                         newY = rng.Next(i.y + 1, i.y + i.height - 2);
 
-                        if (_map.tiles[newX,newY] != TileTypes.TABLE){ 
-                                ok = false;
-                                break;
-                            }
-                        
+                        if (_map.tiles[newX, newY] != TileTypes.TABLE) {
+                            ok = false;
+                            break;
+                        }
+
                     }
 
                     _map.tiles[newX, newY] = TileTypes.TABLE;
+                }
+
+                int chairs = area / 80;
+                for (int j = 0; j < chairs; j++) {
+                    bool ok = false;
+                    int newX = 0;
+                    int newY = 0;
+                    while (!ok) {
+                        ok = true;
+                        newX = rng.Next(i.x + 1, i.x + i.width - 2);
+                        newY = rng.Next(i.y + 1, i.y + i.height - 2);
+
+                        if (_map.tiles[newX, newY] != TileTypes.CHAIR) {
+                            ok = false;
+                            break;
+                        }
+
+                    }
+
+                    _map.tiles[newX, newY] = TileTypes.CHAIR;
                 }
 
             }
