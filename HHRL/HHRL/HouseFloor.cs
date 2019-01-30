@@ -20,7 +20,7 @@ namespace HHRL {
     }
 
 
-  
+
 
 
 
@@ -63,6 +63,12 @@ namespace HHRL {
                             mapConsole.Set(l.X(), l.Y(), Colors.grey - darkenBy, Colors.black, g.symbol);
                         }
                     }
+                } else if (IsExplored(l.X(), l.Y())) {
+                    //draw out-of-sight but known light sources
+                    if (l is LampGeneric g) {
+                        mapConsole.Set(l.X(), l.Y(), Colors.grey - new RLColor(96, 96, 96), Colors.black, g.symbol);
+                    }
+
                 }
             }
 
